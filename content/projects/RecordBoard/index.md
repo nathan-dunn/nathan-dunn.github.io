@@ -15,4 +15,6 @@ showInProjects: true
 showInDemos: true
 ---
 
-Starry Station android app feature that provided users with the ability to easily filter content, pause the internet, and even create custom rules for blocking apps like Facebook and Twitter right from their phones.
+A proof of concept I created for a friend of mine who has an [online community](https://www.hornstrength.com/) of strength trainers. This digital record board mimics the physical record boards he had when he owned a brick and mortar gym.
+
+It is web based but 100% responsive and looks great on mobile devices as well.

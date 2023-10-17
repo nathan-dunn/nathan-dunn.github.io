@@ -15,4 +15,6 @@ showInProjects: true
 showInDemos: true
 ---
 
-A single page web app for helping me choose where to travel, built with Next.js, Firebase, and Tailwind CSS
+A self-initiated internal tool I created to assist support staff, management, and developers to give a helicopter view of all our Marketplace clients and their inventory, settings, and events.
+
+In addition it provides a way to quickly access a client's Marketplace and even allows testing of apis.
