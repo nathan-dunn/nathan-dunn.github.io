@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://nathan-dunn.github.io/sitemap.xml
+Host: https://nathan-dunn.github.io
