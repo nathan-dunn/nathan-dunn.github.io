@@ -1,5 +1,5 @@
 ---
-date: 'b6'
+date: '10'
 title: 'React Profile'
 github: 'https://github.com/nathan-dunn/resume/'
 external: 'https://nathan-dunn-resume-react.surge.sh/'

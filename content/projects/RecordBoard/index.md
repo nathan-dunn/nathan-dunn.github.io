@@ -1,5 +1,5 @@
 ---
-date: 'b3'
+date: '7'
 title: 'Personal Record Board'
 github: 'https://github.com/nathan-dunn/personal-record-board/'
 external: 'https://horn-record-board.surge.sh/'

@@ -1,5 +1,5 @@
 ---
-date: 'a3'
+date: '3'
 title: 'CoRe Mobile'
 cover: './image_1.png'
 covers:
