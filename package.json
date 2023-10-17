@@ -22,8 +22,7 @@
     "prepare": "husky install",
     "lint-staged": "lint-staged",
     "surge": "npm run build && surge public --domain https://nathan-dunn-test.surge.sh/",
-    "deploy": "npm run build --prefix-paths && gh-pages -d public",
-    "deploy:ci": "npm run build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/nathan-dunn/personal-website-v3.git"
+    "deploy": "npm run build --prefix-paths && gh-pages -d public"
   },
   "lint-staged": {
     "*.{js,css,json,md}": [
