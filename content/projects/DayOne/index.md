@@ -1,4 +1,5 @@
 ---
+id: 6
 date: '6'
 title: 'Day One Lift'
 github: 'https://github.com/nathan-dunn/day-one'
