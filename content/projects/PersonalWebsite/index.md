@@ -3,7 +3,7 @@ id: 11
 date: '11'
 title: 'Personal Website'
 github: 'https://github.com/nathan-dunn/nathan-dunn.github.io'
-external: 'https://nathan-dunn.surge.sh/'
+external: 'https://nathan-dunn.github.io/'
 covers:
   - './image_2.png'
   - './image_3.png'
