@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: 'Nathan Dunn',
     description: 'Nathan Dunn - software engineer',
-    siteUrl: 'https://nathan-dunn.surge.sh', // No trailing slash allowed!
+    siteUrl: 'https://nathan-dunn.github.io/personal-website-v3', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@nathan_dunn_aml',
   },
