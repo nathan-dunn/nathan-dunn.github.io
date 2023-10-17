@@ -13,7 +13,7 @@
   "license": "MIT",
   "browserslist": "> 0.25%, not dead",
   "scripts": {
-    "build": "NODE_OPTIONS=--openssl-legacy-provider gatsby build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider gatsby build --prefix-paths",
     "develop": "NODE_OPTIONS=--openssl-legacy-provider gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
@@ -22,7 +22,7 @@
     "prepare": "husky install",
     "lint-staged": "lint-staged",
     "surge": "npm run build && surge public --domain https://nathan-dunn-test.surge.sh/",
-    "deploy": "npm run build --prefix-paths && gh-pages -d public"
+    "deploy": "npm run build && gh-pages -d public"
   },
   "lint-staged": {
     "*.{js,css,json,md}": [
