@@ -2,7 +2,7 @@
   <img alt="Logo" src="https://raw.githubusercontent.com/nathan-dunn/personal-website-v2/main/src/images/logo.png" width="100" />
 </div>
 <h1 align="center">
-  nathan-dunn-test.surge.sh
+  https://nathan-dunn.github.io
 </h1>
 
 ![demo](https://raw.githubusercontent.com/nathan-dunn/personal-website-v2/main/src/images/demo.png)
