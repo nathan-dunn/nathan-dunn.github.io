@@ -15,4 +15,6 @@ showInProjects: true
 showInDemos: true
 ---
 
-Online version of my resume made for fun. I was interested in learning React.js, so I found a simple tutorial and it spun into a weekend project.
+Online version of my resume I made to stand-out. It's handy and resoponsive, but when converting it to pdf the the document is not scannable by ATS software!
+
+I have since made a [pdf version](https://nathan-dunn-resume.surge.sh/) that is scannable, but left the site up to show my work.

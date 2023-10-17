@@ -18,4 +18,6 @@ showInProjects: true
 showInDemos: true
 ---
 
-Second iteration of my personal website. Designed and developed with a conscious effort to avoid using any superfluous frameworks like Bootstrap.
+A fun spin-off of [Your Places](https://yourplaces.surge.sh/), this app allows you to rank states by several different metrics and then see how they stack up against each other.
+
+Like many of my apps this started as a node cli before I deployed a web version.

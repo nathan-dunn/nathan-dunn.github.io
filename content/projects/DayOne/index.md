@@ -18,4 +18,6 @@ showInProjects: true
 showInDemos: true
 ---
 
-A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories, and sort through your top repos by number of stars, forks, and size.
+A mobile app I created for my wife and I when we were doing the same workout program. The app allows you to set your maxes and then calculates the weights for each workout.
+
+It was also an opportunity for me to play with custom animations using Lottie, as well as parallax page transitions.

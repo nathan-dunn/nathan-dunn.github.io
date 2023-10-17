@@ -19,4 +19,4 @@ showInFeatured: true
 showInDemos: true
 ---
 
-A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.
+The mobile version of our flagship product, Marketplace. This app allows dealers to bid and buy vehicles from the convenience of their mobile device. Marketplace Mobile is a white-label multitenant application, with custom branding for each of our clients. It is available on both iOS and Android.

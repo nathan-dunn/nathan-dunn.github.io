@@ -15,4 +15,6 @@ showInProjects: true
 showInDemos: true
 ---
 
-Complete overhaul and redesign of NU Women in Tech’s club website using Jekyll, built while serving as web chair on the e-board.
+I built this app years ago to help us decide on a new city. It fetches and scrapes data from [Best Places](https://www.bestplaces.net/) and [Area Vibes](https://www.areavibes.com/) and then displays it in a simplified format.
+
+The app is no longer functional, but I have left it up for posterity and made it work with Austin, TX.
