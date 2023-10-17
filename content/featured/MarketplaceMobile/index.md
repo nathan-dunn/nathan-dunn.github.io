@@ -1,5 +1,5 @@
 ---
-date: 'a1'
+date: '1'
 title: 'Marketplace Mobile'
 cover: './image_1.png'
 covers:

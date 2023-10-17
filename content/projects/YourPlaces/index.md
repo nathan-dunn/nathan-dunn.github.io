@@ -1,5 +1,5 @@
 ---
-date: 'b4'
+date: '8'
 title: 'Your Places'
 github: 'https://github.com/nathan-dunn/your-places-revamp/'
 external: 'https://yourplaces.surge.sh/'

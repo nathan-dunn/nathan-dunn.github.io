@@ -1,5 +1,5 @@
 ---
-date: 'a4'
+date: '4'
 title: 'IAS Connect'
 cover: './image_1.png'
 covers:

@@ -1,5 +1,5 @@
 ---
-date: 'b5'
+date: '9'
 title: 'State Showdown'
 github: 'https://github.com/nathan-dunn/state-showdown-revamp/'
 external: 'https://state-showdown.surge.sh/'
