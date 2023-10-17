@@ -16,6 +16,7 @@
     "build": "NODE_OPTIONS=--openssl-legacy-provider gatsby build",
     "develop": "NODE_OPTIONS=--openssl-legacy-provider gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "dev": "npm run start",
     "start": "npm run develop",
     "serve": "npm run build && gatsby serve",
     "clean": "gatsby clean",

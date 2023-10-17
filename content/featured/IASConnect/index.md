@@ -20,4 +20,4 @@ showInFeatured: true
 showInDemos: true
 ---
 
-IAS Connect is our custom authentication and authorization service. It is a web-based, white-label multitenant application, with custom branding for each of our clients. It is used by our Marketplace product to authenticate and authorize users.
+IAS Connect is our custom authentication and authorization service. It is a web-based, white-label multi-tenant application, with custom branding for each of our clients. It is used by our Marketplace product to authenticate and authorize users.
