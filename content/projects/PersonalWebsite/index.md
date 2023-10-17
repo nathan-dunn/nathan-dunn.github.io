@@ -2,7 +2,7 @@
 id: 11
 date: '11'
 title: 'Personal Website'
-github: 'https://github.com/nathan-dunn/personal-website-v2'
+github: 'https://github.com/nathan-dunn/nathan-dunn.github.io'
 external: 'https://nathan-dunn.surge.sh/'
 covers:
   - './image_2.png'
@@ -18,4 +18,4 @@ showInProjects: true
 showInDemos: false
 ---
 
-Third iteration of my personal website built with Jekyll and hosted on GitHub Pages.
+100% credit goes to [Brittany Chiang](https://github.com/bchiang7) for designing this site. I just took her project and made it my own with some tweaks. This was my first experience with Gatsby and GraphQL besides Udemy tutorials.
