@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const StyledGallery = styled.div`
@@ -54,13 +52,9 @@ const Gallery = ({ covers }) => {
   const [photoIndex, setPhotoIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
-  const imageByIndex = index => covers[index % covers.length];
-
-  const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay()]);
-
   return (
     <StyledGallery>
-      <div ref={emblaRef} className="gallery-container">
+      <div className="gallery-container">
         <div className="images">
           {covers.map((image, imageIndex) => (
             <div
