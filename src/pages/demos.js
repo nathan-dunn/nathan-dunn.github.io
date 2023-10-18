@@ -32,6 +32,10 @@ const StyledTableContainer = styled.div`
       flex-direction: column;
       gap: 80px;
       border: 1px solid var(--light-navy);
+
+      @media (max-width: 768px) {
+        gap: 40px;
+      }
     }
 
     .content .row-wrapper {
