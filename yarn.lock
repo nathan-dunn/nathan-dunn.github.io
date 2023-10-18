@@ -14585,6 +14585,11 @@ yeast@0.1.2:
   resolved "https://registry.npmjs.org/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
   integrity sha1-AI4G2AlDIMNy28L47XagymyKxBk=
 
+yet-another-react-lightbox@^3.14.0:
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/yet-another-react-lightbox/-/yet-another-react-lightbox-3.14.0.tgz#7f90a345818e252c3963d02ba0289e36b968cfce"
+  integrity sha512-UbkxGre2TzzIuRL9bQp6Spbc/9Hgn8JYofs0DJL1cyCc6+ir5I5djJKLs9UpyH61Ak/y81QYF5MA6ve//ggJrw==
+
 yn@3.1.1:
   version "3.1.1"
   resolved "https://registry.npmjs.org/yn/-/yn-3.1.1.tgz#1e87401a09d767c1d5eab26a6e4c185182d2eb50"
