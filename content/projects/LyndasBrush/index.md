@@ -5,9 +5,9 @@ title: Lynda's Brush
 github: https://github.com/nathan-dunn/lyndas-brush-revamp
 external: https://lyndas-brush.surge.sh/
 covers:
-  - ./image_1.png
   - ./image_2.png
   - ./image_3.png
+  - ./image_4.png
 tech:
   - Svelte
   - TypeScript
