@@ -37,7 +37,7 @@ const StyledTableContainer = styled.div`
     .content .tr {
       &:hover,
       &:focus {
-        background-color: var(--light-navy);
+        // background-color: var(--light-navy);
       }
     }
 
@@ -304,8 +304,14 @@ export const pageQuery = graphql`
             external
             covers {
               childImageSharp {
-                gatsbyImageData(
+                small: gatsbyImageData(
                   height: 350
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                  layout: CONSTRAINED
+                )
+                large: gatsbyImageData(
+                  height: 700
                   placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]
                   layout: CONSTRAINED
