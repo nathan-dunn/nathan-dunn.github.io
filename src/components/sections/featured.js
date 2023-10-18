@@ -313,6 +313,7 @@ const Featured = () => {
         edges {
           node {
             frontmatter {
+              id
               title
               cover {
                 childImageSharp {
@@ -354,7 +355,7 @@ const Featured = () => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, tech, github, cover, cta } = frontmatter;
+            const { id, external, title, tech, github, cover, cta } = frontmatter;
             const image = getImage(cover);
 
             return (
@@ -364,7 +365,9 @@ const Featured = () => {
                     <p className="project-overline">Project Lead</p>
 
                     <h3 className="project-title">
-                      <a href={external}>{title}</a>
+                      <a href={i === 0 ? '/demos' : `/demos#${id}`} target="_self" rel="noreferrer">
+                        {title}
+                      </a>
                     </h3>
 
                     <div
@@ -391,15 +394,12 @@ const Featured = () => {
                           <Icon name="External" />
                         </a>
                       )}
-                      {/* <Link to={i === 0 ? '/demos' : `/demos#${title}`}>
-                        <Icon name="Bookmark" />
-                      </Link> */}
                     </div>
                   </div>
                 </div>
 
                 <div className="project-image">
-                  <a href={external ? external : github ? github : '#'}>
+                  <a href={i === 0 ? '/demos' : `/demos#${id}`} target="_self" rel="noreferrer">
                     <GatsbyImage image={image} alt={title} className="img" />
                   </a>
                 </div>

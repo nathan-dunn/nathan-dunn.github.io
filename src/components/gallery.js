@@ -21,6 +21,13 @@ const StyledGallery = styled.div`
     @media (max-width: 768px) {
       grid-column: 1 / -1;
     }
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      outline: 0;
+      filter: none;
+    }
   }
 
   .images-spaced {
@@ -30,6 +37,7 @@ const StyledGallery = styled.div`
   .image-wrapper {
     mix-blend-mode: multiply;
     filter: grayscale(100%) contrast(1) brightness(90%);
+    cursor: pointer;
 
     &:hover,
     &:focus {

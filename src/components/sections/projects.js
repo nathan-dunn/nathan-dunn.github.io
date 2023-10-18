@@ -178,6 +178,7 @@ const Projects = () => {
         edges {
           node {
             frontmatter {
+              id
               title
               tech
               github
@@ -213,7 +214,7 @@ const Projects = () => {
 
   const projectInner = node => {
     const { frontmatter, html } = node;
-    const { github, external, title, tech } = frontmatter;
+    const { id, github, external, title, tech } = frontmatter;
 
     return (
       <div className="project-inner">
@@ -246,7 +247,7 @@ const Projects = () => {
           </div>
 
           <h3 className="project-title">
-            <a href={external} target="_blank" rel="noreferrer">
+            <a href={`/demos#${id}`} target="_self" rel="noreferrer">
               {title}
             </a>
           </h3>

@@ -30,14 +30,14 @@ const StyledTableContainer = styled.div`
     .content {
       display: flex;
       flex-direction: column;
-      // gap: 120px;
+      gap: 80px;
       border: 1px solid var(--light-navy);
     }
 
-    .content .tr {
+    .content .row-wrapper {
       &:hover,
       &:focus {
-        // background-color: var(--light-navy);
+        background-color: var(--light-navy);
       }
     }
 
@@ -68,11 +68,11 @@ const StyledTableContainer = styled.div`
     }
 
     .row-wrapper {
-      padding-top: 100px; // <--- here
+      // padding-top: 100px; // <--- here
     }
 
     .row-wrapper:first-child {
-      padding-top: 0; // <--- here
+      // padding-top: 0; // <--- here
     }
 
     .tr {
@@ -169,7 +169,7 @@ const StyledTableContainer = styled.div`
   }
 
   .title:hover {
-    // color: var(--green);
+    // color: var(--green); // <--- not clickable so don't highlight
   }
 
   .project-links {
@@ -230,10 +230,10 @@ const DemosPage = ({ location, data }) => {
             <div className="content">
               {projects.length > 0 &&
                 projects.map(({ node }, i) => {
-                  const { title, external, tech, github, covers } = node.frontmatter;
+                  const { id, title, external, tech, github, covers } = node.frontmatter;
 
                   return (
-                    <div className="row-wrapper" id={title}>
+                    <div className="row-wrapper" id={id}>
                       <div className="tr" key={i} ref={el => (revealProjects.current[i] = el)}>
                         <div className="td header">
                           <div className="title">{title}</div>
@@ -297,6 +297,7 @@ export const pageQuery = graphql`
       edges {
         node {
           frontmatter {
+            id
             date
             title
             tech
