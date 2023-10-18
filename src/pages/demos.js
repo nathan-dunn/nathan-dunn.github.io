@@ -237,8 +237,8 @@ const DemosPage = ({ location, data }) => {
                   const { id, title, external, tech, github, covers } = node.frontmatter;
 
                   return (
-                    <div className="row-wrapper" id={id}>
-                      <div className="tr" key={i} ref={el => (revealProjects.current[i] = el)}>
+                    <div className="row-wrapper" id={id} key={i + title}>
+                      <div className="tr" ref={el => (revealProjects.current[i] = el)}>
                         <div className="td header">
                           <div className="title">{title}</div>
                           <div className="project-links hide-on-mobile">
@@ -262,7 +262,7 @@ const DemosPage = ({ location, data }) => {
                         <div className="td tech hide-on-mobile">
                           {tech?.length > 0 &&
                             tech.map((item, i) => (
-                              <span key={i}>
+                              <span key={i + item}>
                                 {item}
                                 {''}
                                 {i !== tech.length - 1 && (
