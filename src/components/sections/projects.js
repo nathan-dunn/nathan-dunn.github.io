@@ -240,9 +240,6 @@ const Projects = () => {
                   <Icon name="External" />
                 </a>
               )}
-              {/* <Link to={`/demos#${title}`}>
-                <Icon name="Bookmark" />
-              </Link> */}
             </div>
           </div>
 
