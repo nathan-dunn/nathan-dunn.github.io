@@ -7,7 +7,6 @@ external: 'https://horn-record-board.surge.sh/'
 covers:
   - './image_1.png'
   - './image_3.png'
-
 tech:
   - React
   - Chakra UI
