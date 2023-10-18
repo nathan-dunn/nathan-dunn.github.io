@@ -58,14 +58,22 @@ const StyledGallery = styled.div`
 `;
 
 const Gallery = ({ covers }) => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [lightBoxIndex, setLightBoxIndex] = useState(0);
 
   return (
     <StyledGallery>
       <div className="gallery-container">
         <div className={`images ${covers.length > 2 ? 'images-spaced' : ''}`}>
           {covers.map((cover, index) => (
-            <div key={index} className="image-wrapper" onClick={() => setOpen(true)}>
+            <div
+              key={index}
+              className="image-wrapper"
+              onClick={() => {
+                setLightBoxIndex(index);
+                setOpen(true);
+              }}
+            >
               <GatsbyImage
                 key={index}
                 className="img"
@@ -80,6 +88,7 @@ const Gallery = ({ covers }) => {
           open={open}
           close={() => setOpen(false)}
           slides={covers}
+          index={lightBoxIndex}
           render={{
             slide: ({ slide }, index) => (
               <div key={index} className="image-wrapper" onClick={() => setOpen(true)}>
