@@ -12,15 +12,19 @@ const StyledGallery = styled.div`
   }
 
   .images {
-    overflow: hidden;
     display: flex;
-    justify-content: space-around;
-    gap: 16px;
+    justify-content: flex-start;
+    gap: 20px;
+    overflow: hidden;
     max-height: 400px;
 
     @media (max-width: 768px) {
       grid-column: 1 / -1;
     }
+  }
+
+  .images-spaced {
+    justify-content: space-around;
   }
 
   .image-wrapper {
@@ -53,21 +57,23 @@ const StyledGallery = styled.div`
   }
 `;
 
-const _Gallery = ({ covers }) => {
+const Gallery = ({ covers }) => {
   const [open, setOpen] = React.useState(false);
 
   return (
     <StyledGallery>
       <div className="gallery-container">
-        <div className="images">
-          {covers.map((cover, index) => {
-            const small = getImage(cover.childImageSharp.small);
-            return (
-              <div key={index} className="image-wrapper" onClick={() => setOpen(true)}>
-                <GatsbyImage key={index} className="img" image={small} alt={`Slide ${index + 1}`} />
-              </div>
-            );
-          })}
+        <div className={`images ${covers.length > 2 ? 'images-spaced' : ''}`}>
+          {covers.map((cover, index) => (
+            <div key={index} className="image-wrapper" onClick={() => setOpen(true)}>
+              <GatsbyImage
+                key={index}
+                className="img"
+                image={getImage(cover.childImageSharp.small)}
+                alt={`Slide ${index + 1}`}
+              />
+            </div>
+          ))}
         </div>
 
         <Lightbox
@@ -75,19 +81,16 @@ const _Gallery = ({ covers }) => {
           close={() => setOpen(false)}
           slides={covers}
           render={{
-            slide: ({ slide }, index) => {
-              const large = getImage(slide.childImageSharp.large);
-              return (
-                <div key={index} className="image-wrapper" onClick={() => setOpen(true)}>
-                  <GatsbyImage
-                    key={index}
-                    className="img"
-                    image={large}
-                    alt={`Slide ${index + 1}`}
-                  />
-                </div>
-              );
-            },
+            slide: ({ slide }, index) => (
+              <div key={index} className="image-wrapper" onClick={() => setOpen(true)}>
+                <GatsbyImage
+                  key={index}
+                  className="img"
+                  image={getImage(slide.childImageSharp.large)}
+                  alt={`Slide ${index + 1}`}
+                />
+              </div>
+            ),
           }}
           carousel={{ preload: 1, padding: 0 }}
         />
@@ -96,4 +99,4 @@ const _Gallery = ({ covers }) => {
   );
 };
 
-export default _Gallery;
+export default Gallery;
