@@ -8,11 +8,11 @@ module.exports = {
     },
     // {
     //   name: 'Instagram',
-    //   url: 'https://www.instagram.com/bchiang7',
+    //   url: '',
     // },
     // {
     //   name: 'Twitter',
-    //   url: 'https://twitter.com/bchiang7',
+    //   url: '',
     // },
     {
       name: 'Linkedin',
@@ -20,7 +20,7 @@ module.exports = {
     },
     // {
     //   name: 'Codepen',
-    //   url: 'https://codepen.io/bchiang7',
+    //   url: '',
     // },
     {
       name: 'Resume',
