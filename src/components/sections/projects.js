@@ -41,6 +41,12 @@ const StyledProjectsSection = styled.section`
     ${({ theme }) => theme.mixins.button};
     margin: 80px auto 0;
   }
+
+  .archive-demos {
+    display: flex;
+    justify-content: space-apart;
+    gap: 100px;
+  }
 `;
 
 const StyledProject = styled.li`
@@ -193,7 +199,7 @@ const Projects = () => {
 
   const [showMore, setShowMore] = useState(false);
   const revealTitle = useRef(null);
-  const revealDemosLink = useRef(null);
+  const revealDemosArchiveLink = useRef(null);
   const revealProjects = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
 
@@ -203,7 +209,7 @@ const Projects = () => {
     }
 
     sr.reveal(revealTitle.current, srConfig());
-    sr.reveal(revealDemosLink.current, srConfig());
+    sr.reveal(revealDemosArchiveLink.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
@@ -269,9 +275,14 @@ const Projects = () => {
     <StyledProjectsSection>
       <h2 ref={revealTitle}>Personal Projects</h2>
 
-      <Link className="inline-link demos-link" to="/demos" ref={revealDemosLink}>
-        view the demos
-      </Link>
+      <div className="archive-demos" ref={revealDemosArchiveLink}>
+        {/* <Link className="inline-link demos-link" to="/demos">
+          view the demos
+        </Link> */}
+        <Link className="inline-link demos-link" to="/archive">
+          view the archives
+        </Link>
+      </div>
 
       <ul className="projects-grid">
         {prefersReducedMotion ? (

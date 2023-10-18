@@ -1,6 +1,6 @@
 ---
 id: 3
-date: '3'
+date: '1-1-2020'
 title: 'CoRe Mobile'
 cover: './image_1.png'
 covers:
@@ -14,6 +14,7 @@ tech:
   - React Native
   - Redux
   - iOS
+company: IAS
 showInFeatured: true
 showInDemos: true
 ---

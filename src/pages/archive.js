@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
@@ -89,6 +89,10 @@ const StyledTableContainer = styled.div`
         font-size: var(--fz-xl);
         font-weight: 600;
         line-height: 1.25;
+
+        &:hover {
+          color: var(--green);
+        }
       }
 
       &.company {
@@ -153,7 +157,7 @@ const ArchivePage = ({ location, data }) => {
       <main>
         <header ref={revealTitle}>
           <h1 className="big-heading">Archive</h1>
-          <p className="subtitle">A big list of things I’ve worked on</p>
+          <p className="subtitle">A short list of things I’ve worked on</p>
         </header>
 
         <StyledTableContainer ref={revealTable}>
@@ -171,6 +175,7 @@ const ArchivePage = ({ location, data }) => {
               {projects.length > 0 &&
                 projects.map(({ node }, i) => {
                   const {
+                    id,
                     date,
                     github,
                     external,
@@ -184,7 +189,9 @@ const ArchivePage = ({ location, data }) => {
                     <tr key={i} ref={el => (revealProjects.current[i] = el)}>
                       <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
 
-                      <td className="title">{title}</td>
+                      <Link className="title" to={i === 0 ? '/demos' : `/demos/#${id}`}>
+                        <td className="title">{title}</td>
+                      </Link>
 
                       <td className="company hide-on-mobile">
                         {company ? <span>{company}</span> : <span>—</span>}
@@ -245,12 +252,13 @@ export default ArchivePage;
 export const pageQuery = graphql`
   {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/content/projects/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fileAbsolutePath: { regex: "/content/(featured|projects)/" } }
+      sort: { fields: [frontmatter___date, id], order: [DESC, ASC] }
     ) {
       edges {
         node {
           frontmatter {
+            id
             date
             title
             tech

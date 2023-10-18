@@ -1,6 +1,6 @@
 ---
 id: 4
-date: '4'
+date: '1-1-2023'
 title: 'IAS Connect'
 cover: './image_1.png'
 covers:
@@ -16,6 +16,7 @@ tech:
   - PostgreSQL
   - MSSQL
   - Keycloak
+company: IAS
 showInFeatured: true
 showInDemos: true
 ---

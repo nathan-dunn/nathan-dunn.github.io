@@ -1,6 +1,6 @@
 ---
 id: 12
-date: '12'
+date: '1-1-2023'
 title: Personal Website
 github: https://github.com/nathan-dunn/nathan-dunn.github.io
 external: https://nathan-dunn.github.io/

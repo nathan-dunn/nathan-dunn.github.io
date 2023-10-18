@@ -1,6 +1,6 @@
 ---
 id: 9
-date: '9'
+date: '1-1-2020'
 title: State Showdown
 github: https://github.com/nathan-dunn/state-showdown-revamp/
 external: https://state-showdown.surge.sh/

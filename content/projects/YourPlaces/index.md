@@ -1,6 +1,6 @@
 ---
 id: 8
-date: '8'
+date: '1-1-2018'
 title: Your Places
 github: https://github.com/nathan-dunn/your-places-revamp/
 external: https://yourplaces.surge.sh/

@@ -1,6 +1,6 @@
 ---
 id: 11
-date: '11'
+date: '1-1-2018'
 title: Lynda's Brush
 github: https://github.com/nathan-dunn/lyndas-brush-revamp
 external: https://lyndas-brush.surge.sh/

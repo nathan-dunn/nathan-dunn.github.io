@@ -1,6 +1,6 @@
 ---
 id: 7
-date: '7'
+date: '1-1-2023'
 title: Personal Record Board
 github: https://github.com/nathan-dunn/personal-record-board/
 external: https://horn-record-board.surge.sh/

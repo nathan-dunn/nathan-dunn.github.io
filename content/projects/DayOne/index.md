@@ -1,9 +1,9 @@
 ---
 id: 6
-date: '6'
+date: '1-1-2023'
 title: Day One Lift
 github: https://github.com/nathan-dunn/day-one
-external: ''
+external: https://appstoreconnect.apple.com/apps/6466804943/appstore/ios/version/inflight
 covers:
   - ./image_1.png
   - ./image_2.png

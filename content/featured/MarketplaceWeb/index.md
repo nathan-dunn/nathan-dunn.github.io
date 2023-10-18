@@ -1,6 +1,6 @@
 ---
 id: 2
-date: '2'
+date: '1-1-2023'
 title: 'Marketplace Web'
 cover: './image_3.png'
 covers:
@@ -15,6 +15,7 @@ tech:
   - Node.js
   - Elasticsearch
   - Docker
+company: IAS
 showInFeatured: true
 showInDemos: true
 ---

@@ -1,6 +1,6 @@
 ---
 id: 1
-date: '1'
+date: '1-1-2023'
 title: 'Marketplace Mobile'
 cover: './image_1.png'
 covers:
@@ -16,6 +16,7 @@ tech:
   - Algolia
   - SignalR
   - Fastlane
+company: IAS
 showInFeatured: true
 showInDemos: true
 ---
