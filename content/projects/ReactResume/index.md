@@ -7,6 +7,7 @@ external: https://nathan-dunn-resume-react.surge.sh/
 covers:
   - ./image_1.png
   - ./image_2.png
+  - ./image_3.png
 tech:
   - TypeScript
   - React

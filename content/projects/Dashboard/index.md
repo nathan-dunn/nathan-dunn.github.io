@@ -8,6 +8,7 @@ covers:
   - ./image_2.png
   - ./image_3.png
   - ./image_4.png
+  - ./image_5.png
 tech:
   - React
   - Chakra UI
