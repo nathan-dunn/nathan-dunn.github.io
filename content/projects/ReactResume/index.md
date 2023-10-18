@@ -1,12 +1,12 @@
 ---
 id: 10
 date: '10'
-title: 'React Profile'
-github: 'https://github.com/nathan-dunn/resume/'
-external: 'https://nathan-dunn-resume-react.surge.sh/'
+title: React Profile
+github: https://github.com/nathan-dunn/resume/
+external: https://nathan-dunn-resume-react.surge.sh/
 covers:
-  - './image_1.png'
-  - './image_2.png'
+  - ./image_1.png
+  - ./image_2.png
 tech:
   - TypeScript
   - React

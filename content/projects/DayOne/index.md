@@ -1,15 +1,15 @@
 ---
 id: 6
 date: '6'
-title: 'Day One Lift'
-github: 'https://github.com/nathan-dunn/day-one'
+title: Day One Lift
+github: https://github.com/nathan-dunn/day-one
 external: ''
 covers:
-  - './image_1.png'
-  - './image_2.png'
-  - './image_3.png'
-  - './image_4.png'
-  - './image_5.png'
+  - ./image_1.png
+  - ./image_2.png
+  - ./image_3.png
+  - ./image_4.png
+  - ./image_5.png
 tech:
   - TypeScript
   - React Native

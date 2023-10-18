@@ -1,12 +1,12 @@
 ---
 id: 7
 date: '7'
-title: 'Personal Record Board'
-github: 'https://github.com/nathan-dunn/personal-record-board/'
-external: 'https://horn-record-board.surge.sh/'
+title: Personal Record Board
+github: https://github.com/nathan-dunn/personal-record-board/
+external: https://horn-record-board.surge.sh/
 covers:
-  - './image_1.png'
-  - './image_3.png'
+  - ./image_1.png
+  - ./image_3.png
 tech:
   - React
   - Chakra UI

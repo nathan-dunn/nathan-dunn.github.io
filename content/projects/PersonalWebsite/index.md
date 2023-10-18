@@ -1,14 +1,14 @@
 ---
 id: 12
 date: '12'
-title: 'Personal Website'
-github: 'https://github.com/nathan-dunn/nathan-dunn.github.io'
-external: 'https://nathan-dunn.github.io/'
+title: Personal Website
+github: https://github.com/nathan-dunn/nathan-dunn.github.io
+external: https://nathan-dunn.github.io/
 covers:
-  - './image_2.png'
-  - './image_3.png'
-  - './image_4.png'
-  - './image_5.png'
+  - ./image_2.png
+  - ./image_3.png
+  - ./image_4.png
+  - ./image_5.png
 tech:
   - Gatsby
   - React

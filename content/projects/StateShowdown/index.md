@@ -1,15 +1,15 @@
 ---
 id: 9
 date: '9'
-title: 'State Showdown'
-github: 'https://github.com/nathan-dunn/state-showdown-revamp/'
-external: 'https://state-showdown.surge.sh/'
+title: State Showdown
+github: https://github.com/nathan-dunn/state-showdown-revamp/
+external: https://state-showdown.surge.sh/
 covers:
-  - './image_1.png'
-  - './image_2.png'
-  - './image_3.png'
-  - './image_4.png'
-  - './image_5.png'
+  - ./image_1.png
+  - ./image_2.png
+  - ./image_3.png
+  - ./image_4.png
+  - ./image_5.png
 tech:
   - TypeScript
   - React

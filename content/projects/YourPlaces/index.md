@@ -1,12 +1,12 @@
 ---
 id: 8
 date: '8'
-title: 'Your Places'
-github: 'https://github.com/nathan-dunn/your-places-revamp/'
-external: 'https://yourplaces.surge.sh/'
+title: Your Places
+github: https://github.com/nathan-dunn/your-places-revamp/
+external: https://yourplaces.surge.sh/
 covers:
-  - './image_1.png'
-  - './image_2.png'
+  - ./image_1.png
+  - ./image_2.png
 tech:
   - React
   - Tachyons
