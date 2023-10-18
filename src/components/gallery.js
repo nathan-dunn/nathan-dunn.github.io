@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Lightbox from 'yet-another-react-lightbox';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/styles.css';
+
+// TODO: - get zoom to work
 
 const StyledGallery = styled.div`
   .gallery-container {
@@ -66,6 +69,7 @@ const StyledGallery = styled.div`
 `;
 
 const Gallery = ({ covers }) => {
+  const zoomRef = React.useRef(null);
   const [open, setOpen] = useState(false);
   const [lightBoxIndex, setLightBoxIndex] = useState(0);
 
@@ -103,13 +107,28 @@ const Gallery = ({ covers }) => {
                 <GatsbyImage
                   key={index}
                   className="img"
-                  image={getImage(slide.childImageSharp.large)}
+                  image={getImage(slide.childImageSharp.huge)}
                   alt={`Slide ${index + 1}`}
+                  style={{ maxHeight: '90vh' }}
+                  objectFit="contain"
                 />
               </div>
             ),
           }}
-          carousel={{ preload: 1, padding: 0 }}
+          plugins={[Zoom]}
+          animation={{ zoom: 500 }}
+          zoom={{
+            ref: zoomRef,
+            maxZoomPixelRatio: 10,
+            zoomInMultiplier: 300,
+            doubleTapDelay: 300,
+            doubleClickDelay: 300,
+            doubleClickMaxStops: 2,
+            keyboardMoveDistance: 50,
+            wheelZoomDistanceFactor: 100,
+            pinchZoomDistanceFactor: 100,
+            disabled: false,
+          }}
         />
       </div>
     </StyledGallery>

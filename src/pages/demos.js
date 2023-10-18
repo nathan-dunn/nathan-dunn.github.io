@@ -312,7 +312,13 @@ export const pageQuery = graphql`
                   layout: CONSTRAINED
                 )
                 large: gatsbyImageData(
-                  height: 700
+                  height: 600
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                  layout: CONSTRAINED
+                )
+                huge: gatsbyImageData(
+                  height: 1200
                   placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]
                   layout: CONSTRAINED
