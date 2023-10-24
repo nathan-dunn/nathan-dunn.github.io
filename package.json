@@ -22,7 +22,7 @@
     "clean": "gatsby clean",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "surge": "npm run build && surge public --domain https://nathan-dunn-test.surge.sh/",
+    "surge": "npm run build && surge public --domain https://nathan-dunn.surge.sh/",
     "deploy": "npm run build && gh-pages -d public -b main --repo https://github.com/nathan-dunn/nathan-dunn.github.io.git"
   },
   "lint-staged": {
