@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { email } from '@config';
 import { Side } from '@components';
+import { Icon } from '@components/icons';
 
 const StyledLinkWrapper = styled.div`
   display: flex;
@@ -32,12 +33,33 @@ const StyledLinkWrapper = styled.div`
     &:focus {
       transform: translateY(-3px);
     }
+
+    &.mode {
+      cursor: pointer;
+      svg {
+        width: 22px;
+        height: 22px;
+        margin-top: -4px;
+      }
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 `;
 
-const Email = ({ isHome }) => (
+const Email = ({ isHome, mode, setMode }) => (
   <Side isHome={isHome} orientation="right">
     <StyledLinkWrapper>
+      <a
+        className="mode"
+        href={null}
+        onClick={() => setMode(p => (p === 'dark' ? 'light' : 'dark'))}
+      >
+        <Icon name={mode === 'light' ? 'Dark' : 'Light'} />
+      </a>
       <a href={`mailto:${email}`}>{email}</a>
     </StyledLinkWrapper>
   </Side>
@@ -45,6 +67,7 @@ const Email = ({ isHome }) => (
 
 Email.propTypes = {
   isHome: PropTypes.bool,
+  setMode: PropTypes.func,
 };
 
 export default Email;

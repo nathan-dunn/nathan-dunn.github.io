@@ -1,37 +1,20 @@
 import { css } from 'styled-components';
 
-const variables = css`
+const variables = ({ mode }) => css`
   :root {
-    --dark-navy: #020c1b;
-    --navy: #0a192f;
-    --light-navy: #112240;
-    --lightest-navy: #233554;
-    --navy-shadow: rgba(2, 12, 27, 0.7);
-    --dark-slate: #495670;
-    --slate: #8892b0;
-    --light-slate: #a8b2d1;
-    --lightest-slate: #ccd6f6;
-    --slate-shadow: rgba(136, 146, 176, 0.7);
-    --white: #e6f1ff;
-    --green: #64ffda;
+    --dark-navy: ${mode === 'light' ? '#495670' : '#020c1b'};
+    --navy: ${mode === 'light' ? '#ccd6f6' : '#0a192f'};
+    --light-navy: ${mode === 'light' ? '#a8b2d1' : '#112240'};
+    --lightest-navy: ${mode === 'light' ? '#8892b0' : '#233554'};
+    --navy-shadow: ${mode === 'dark' ? `rgba(2, 12, 27, 0.7)` : `rgba(136, 146, 176, 0.7)`};
 
-    // INVERTED
-    // --dark-navy: #495670;
-    // --navy: #8892b0;
-    // --navy: #ccd6f6;
-    // --light-navy: #a8b2d1;
-    // --lightest-navy: #ccd6f6;
-    // --lightest-navy: #8892b0;
-    // --navy-shadow: rgba(136, 146, 176, 0.7);
+    --slate: ${mode === 'light' ? '#0a192f' : '#8892b0'};
+    --light-slate: ${mode === 'light' ? '#112240' : '#a8b2d1'};
+    --lightest-slate: ${mode === 'light' ? '#233554' : '#ccd6f6'};
+    --slate-shadow: ${mode === 'dark' ? `rgba(136, 146, 176, 0.7)` : `rgba(2, 12, 27, 0.7)`};
 
-    // --dark-slate: #020c1b;
-    // --slate: #0a192f;
-    // --light-slate: #112240;
-    // --lightest-slate: #233554;
-    // --slate-shadow: rgba(2, 12, 27, 0.7);
-
-    // --white: #e6f1ff;
-    // --green: #cb4154;
+    --white: ${mode === 'light' ? '#e6f1ff' : '#e6f1ff'};
+    --green: ${mode === 'light' ? '#cb4154' : '#64ffda'};
 
     --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;
