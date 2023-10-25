@@ -37,6 +37,11 @@ const StyledGallery = styled.div`
     justify-content: space-around;
   }
 
+  .images-not-spaced {
+    justify-content: flex-start;
+    gap: 80px;
+  }
+
   .image-wrapper {
     mix-blend-mode: multiply;
     filter: grayscale(100%) contrast(1) brightness(90%);
@@ -58,7 +63,7 @@ const StyledGallery = styled.div`
       object-fit: cover;
       width: auto;
       height: 100%;
-      // filter: grayscale(100%) contrast(1) brightness(50%);
+      filter: grayscale(100%) contrast(1) brightness(50%);
     }
   }
 
@@ -76,7 +81,7 @@ const Gallery = ({ covers }) => {
   return (
     <StyledGallery>
       <div className="gallery-container">
-        <div className={`images ${covers.length > 2 ? 'images-spaced' : ''}`}>
+        <div className={`images ${covers.length <= 3 ? 'images-not-spaced' : 'images-spaced'}`}>
           {covers.map((cover, index) => (
             <div
               key={index}

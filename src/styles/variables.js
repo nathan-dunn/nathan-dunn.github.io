@@ -16,22 +16,22 @@ const variables = css`
     --green: #64ffda;
 
     // INVERTED
-    --dark-navy: #495670;
-    --navy: #8892b0;
-    --navy: #ccd6f6;
-    --light-navy: #a8b2d1;
-    --lightest-navy: #ccd6f6;
-    --lightest-navy: #8892b0;
-    --navy-shadow: rgba(136, 146, 176, 0.7);
+    // --dark-navy: #495670;
+    // --navy: #8892b0;
+    // --navy: #ccd6f6;
+    // --light-navy: #a8b2d1;
+    // --lightest-navy: #ccd6f6;
+    // --lightest-navy: #8892b0;
+    // --navy-shadow: rgba(136, 146, 176, 0.7);
 
-    --dark-slate: #020c1b;
-    --slate: #0a192f;
-    --light-slate: #112240;
-    --lightest-slate: #233554;
-    --slate-shadow: rgba(2, 12, 27, 0.7);
+    // --dark-slate: #020c1b;
+    // --slate: #0a192f;
+    // --light-slate: #112240;
+    // --lightest-slate: #233554;
+    // --slate-shadow: rgba(2, 12, 27, 0.7);
 
-    --white: #e6f1ff;
-    --green: #cb4154;
+    // --white: #e6f1ff;
+    // --green: #cb4154;
 
     --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;

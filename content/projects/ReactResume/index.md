@@ -14,7 +14,7 @@ tech:
   - Vite
 company: ''
 showInProjects: true
-showInDemos: true
+showInGallery: true
 ---
 
 Online version of my resume I made to stand-out. It's handy and responsive, but when converting it to pdf the document is not scannable by ATS software!

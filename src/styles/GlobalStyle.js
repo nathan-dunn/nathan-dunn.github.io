@@ -447,13 +447,7 @@ const GlobalStyle = createGlobalStyle`
 
   ${PrismStyles};
 
-  .demo-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-  }
+
 
   .responsive-image {
     width: 66vw;

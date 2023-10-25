@@ -16,7 +16,7 @@ tech:
   - Vite
 company: ''
 showInProjects: true
-showInDemos: true
+showInGallery: true
 ---
 
 A fun spin-off of [Your Places](https://yourplaces.surge.sh/), this app allows you to rank states by several different metrics and then see how they stack up against each other.

@@ -18,7 +18,7 @@ tech:
   - Fastlane
 company: IAS
 showInFeatured: true
-showInDemos: true
+showInGallery: true
 ---
 
 The mobile version of our flagship product, Marketplace. This app allows dealers to bid and buy vehicles from the convenience of their mobile device. Marketplace Mobile is a white-label multi-tenant application, with custom branding for each of our clients. It is available on both iOS and Android.

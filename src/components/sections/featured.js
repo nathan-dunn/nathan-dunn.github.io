@@ -283,7 +283,7 @@ const StyledProject = styled.li`
         bottom: 0;
         z-index: 3;
         transition: var(--transition);
-        background-color: var(--navy);
+        // background-color: var(--navy);
         mix-blend-mode: screen;
       }
     }
@@ -365,7 +365,11 @@ const Featured = () => {
                     <p className="project-overline">Project Lead</p>
 
                     <h3 className="project-title">
-                      <a href={i === 0 ? '/demos' : `/demos#${id}`} target="_self" rel="noreferrer">
+                      <a
+                        href={i === 0 ? '/gallery' : `/gallery#${id}`}
+                        target="_self"
+                        rel="noreferrer"
+                      >
                         {title}
                       </a>
                     </h3>
@@ -399,7 +403,7 @@ const Featured = () => {
                 </div>
 
                 <div className="project-image">
-                  <a href={i === 0 ? '/demos' : `/demos#${id}`} target="_self" rel="noreferrer">
+                  <a href={i === 0 ? '/gallery' : `/gallery#${id}`} target="_self" rel="noreferrer">
                     <GatsbyImage image={image} alt={title} className="img" />
                   </a>
                 </div>

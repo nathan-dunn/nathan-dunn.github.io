@@ -16,7 +16,7 @@ tech:
   - iOS
 company: IAS
 showInFeatured: true
-showInDemos: true
+showInGallery: true
 ---
 
 The CoRe App is a native iOS based app that allows CoRe App system users to decode VINs, input detailed vehicle information, take photos and write a basic or detailed condition report that is customizable for each consignor.
