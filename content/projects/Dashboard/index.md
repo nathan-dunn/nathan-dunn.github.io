@@ -10,7 +10,7 @@ covers:
   - ./image_4.png
   - ./image_5.png
 tech:
-  - Typescript*
+  - TypeScript*
   - React
   - Chakra UI
   - Vite
