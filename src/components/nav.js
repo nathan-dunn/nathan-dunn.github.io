@@ -150,7 +150,7 @@ const StyledLinks = styled.div`
   }
 `;
 
-const Nav = ({ isHome }) => {
+const Nav = ({ isHome, mode, setMode }) => {
   const [isMounted, setIsMounted] = useState(!isHome);
   const scrollDirection = useScrollDirection('down');
   const [scrolledToTop, setScrolledToTop] = useState(true);
@@ -235,7 +235,7 @@ const Nav = ({ isHome }) => {
               <div>{ResumeLink}</div>
             </StyledLinks>
 
-            <Menu />
+            <Menu mode={mode} setMode={setMode} />
           </>
         ) : (
           <>
@@ -276,7 +276,7 @@ const Nav = ({ isHome }) => {
             <TransitionGroup component={null}>
               {isMounted && (
                 <CSSTransition classNames={fadeClass} timeout={timeout}>
-                  <Menu />
+                  <Menu mode={mode} setMode={setMode} />
                 </CSSTransition>
               )}
             </TransitionGroup>
@@ -289,6 +289,8 @@ const Nav = ({ isHome }) => {
 
 Nav.propTypes = {
   isHome: PropTypes.bool,
+  mode: PropTypes.string,
+  setMode: PropTypes.func,
 };
 
 export default Nav;

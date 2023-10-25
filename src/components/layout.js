@@ -63,7 +63,7 @@ const Layout = ({ children, location }) => {
             <Loader finishLoading={() => setIsLoading(false)} />
           ) : (
             <StyledContent>
-              <Nav isHome={isHome} />
+              <Nav isHome={isHome} mode={mode} setMode={setMode} />
               <Social isHome={isHome} />
               <Email isHome={isHome} mode={mode} setMode={setMode} />
 

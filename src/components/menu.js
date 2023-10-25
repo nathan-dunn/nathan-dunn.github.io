@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { navLinks } from '@config';
 import { KEY_CODES } from '@utils';
 import { useOnClickOutside } from '@hooks';
+import { Icon } from '@components/icons';
 
 const StyledMenu = styled.div`
   display: none;
@@ -104,6 +106,22 @@ const StyledSidebar = styled.aside`
     transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
     visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
     transition: var(--transition);
+
+    // .mode {
+    //   margin-top: 30%;
+    //   justify-self: flex-end;
+
+    //   cursor: pointer;
+    //   svg {
+    //     width: 22px;
+    //     height: 22px;
+    //     margin-top: -4px;
+    //   }
+    //   svg {
+    //     width: 20px;
+    //     height: 20px;
+    //   }
+    // }
   }
 
   nav {
@@ -153,9 +171,25 @@ const StyledSidebar = styled.aside`
     margin: 10% auto 0;
     width: max-content;
   }
+
+  .mode {
+    position: absolute;
+    bottom: 10%;
+
+    cursor: pointer;
+    svg {
+      width: 22px;
+      height: 22px;
+      margin-top: -4px;
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
 `;
 
-const Menu = () => {
+const Menu = ({ mode, setMode }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -246,7 +280,8 @@ const Menu = () => {
           onClick={toggleMenu}
           menuOpen={menuOpen}
           ref={buttonRef}
-          aria-label="Menu">
+          aria-label="Menu"
+        >
           <div className="ham-box">
             <div className="ham-box-inner" />
           </div>
@@ -268,14 +303,28 @@ const Menu = () => {
 
             <a
               href="https://drive.google.com/file/d/11cQryoLjXg8iPJBjnc_TGFmtXKtlDli6/view?usp=drive_link"
-              className="resume-link">
+              className="resume-link"
+            >
               Resume
+            </a>
+
+            <a
+              className="mode"
+              href={null}
+              onClick={() => setMode(p => (p === 'dark' ? 'light' : 'dark'))}
+            >
+              <Icon name={mode === 'light' ? 'Dark' : 'Light'} />
             </a>
           </nav>
         </StyledSidebar>
       </div>
     </StyledMenu>
   );
+};
+
+Menu.propTypes = {
+  mode: PropTypes.string,
+  setMode: PropTypes.func,
 };
 
 export default Menu;

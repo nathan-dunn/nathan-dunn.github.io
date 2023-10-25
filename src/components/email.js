@@ -67,6 +67,7 @@ const Email = ({ isHome, mode, setMode }) => (
 
 Email.propTypes = {
   isHome: PropTypes.bool,
+  mode: PropTypes.string,
   setMode: PropTypes.func,
 };
 
