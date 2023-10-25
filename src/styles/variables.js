@@ -13,7 +13,7 @@ const variables = ({ mode }) => css`
     --lightest-slate: ${mode === 'light' ? '#233554' : '#ccd6f6'};
     --slate-shadow: ${mode === 'dark' ? `rgba(136, 146, 176, 0.7)` : `rgba(2, 12, 27, 0.7)`};
 
-    --white: ${mode === 'light' ? '#e6f1ff' : '#e6f1ff'};
+    --white: ${mode === 'light' ? '#0a192f' : '#e6f1ff'};
     --green: ${mode === 'light' ? '#cb4154' : '#64ffda'};
 
     --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
