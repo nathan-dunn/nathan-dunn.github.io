@@ -2,7 +2,7 @@
 id: 3
 date: '1-1-2020'
 title: 'CoRe Mobile'
-cover: './image_1.png'
+cover: './image_0.png'
 covers:
   - './image_2.png'
   - './image_3.png'
