@@ -11,24 +11,27 @@ const variables = css`
     --slate: #8892b0;
     --light-slate: #a8b2d1;
     --lightest-slate: #ccd6f6;
+    --slate-shadow: rgba(136, 146, 176, 0.7);
     --white: #e6f1ff;
     --green: #64ffda;
-    --pink: #f57dff;
-    --blue: #57cbff;
 
-    --dark-navy: #020c1b;
-    --navy: #0a192f;
-    --light-navy: #112240;
-    --lightest-navy: #233554;
-    --navy-shadow: rgba(2, 12, 27, 0.7);
-    --dark-slate: #495670;
-    --slate: #8892b0;
-    --light-slate: #a8b2d1;
-    --lightest-slate: #ccd6f6;
+    // INVERTED
+    --dark-navy: #495670;
+    --navy: #8892b0;
+    --navy: #ccd6f6;
+    --light-navy: #a8b2d1;
+    --lightest-navy: #ccd6f6;
+    --lightest-navy: #8892b0;
+    --navy-shadow: rgba(136, 146, 176, 0.7);
+
+    --dark-slate: #020c1b;
+    --slate: #0a192f;
+    --light-slate: #112240;
+    --lightest-slate: #233554;
+    --slate-shadow: rgba(2, 12, 27, 0.7);
+
     --white: #e6f1ff;
-    --green: #64ffda;
-    --pink: #f57dff;
-    --blue: #57cbff;
+    --green: #cb4154;
 
     --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;
