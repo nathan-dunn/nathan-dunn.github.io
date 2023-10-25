@@ -10,6 +10,7 @@ covers:
   - ./image_4.png
   - ./image_5.png
 tech:
+  - Typescript*
   - React
   - Chakra UI
   - Vite
@@ -18,6 +19,6 @@ showInProjects: true
 showInDemos: true
 ---
 
-A self-initiated internal tool I created to assist support staff, management, and developers at [IAS](https://www.integratedauctionsolutions.com/) to give an overhead view of all our Marketplace clients and their inventory, settings, and events.
+A self-initiated internal tool I created to assist support staff, management, and developers at [IAS](https://www.integratedauctionsolutions.com/) to give an overhead view of all our Marketplace clients and their inventory, settings, and events, test apis, and more.
 
-In addition it provides a way to quickly access a client's Marketplace and even allows testing of apis.
+I am currently in the process of adding TypeScript.
