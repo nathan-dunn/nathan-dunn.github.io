@@ -1,4 +1,9 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 const config = require('./src/config');
+
+console.log('>>>>>process.env:', process.env.GATSBY_FIREBASE_APP_ID);
 
 module.exports = {
   siteMetadata: {
@@ -142,20 +147,25 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-firebase',
+      options: {
+        credentials: {
+          apiKey: process.env.GATSBY_FIREBASE_API_KEY,
+          authDomain: process.env.GATSBY_FIREBASE_AUTH_DOMAIN,
+          databaseURL: process.env.GATSBY_FIREBASE_DATABASE_URL,
+          projectId: process.env.GATSBY_FIREBASE_PROJECT_ID,
+          storageBucket: process.env.GATSBY_FIREBASE_STORAGE_BUCKET,
+          messagingSenderId: process.env.GATSBY_FIREBASE_MESSAGING_SENDER_ID,
+          appId: process.env.GATSBY_FIREBASE_APP_ID,
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          'G-05ZCQ3JC32', // Google Analytics / GA
-        ],
-        // This object is used for configuration specific to this plugin
+        trackingIds: [process.env.GATSBY_GA_ID],
         pluginConfig: {
-          // Puts tracking script in the head instead of the body
           head: true,
-          // Setting this parameter is also optional
-          respectDNT: true,
-          // Avoids sending pageview hits from custom paths
-          exclude: ['/preview/**', '/do-not-track/me/too/'],
         },
       },
     },
