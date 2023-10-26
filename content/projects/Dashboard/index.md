@@ -8,15 +8,15 @@ covers:
   - ./image_2.png
   - ./image_3.png
   - ./image_4.png
-  - ./image_5.png
+  - ./image_9.png
 tech:
-  - Typescript*
+  - TypeScript*
   - React
   - Chakra UI
   - Vite
 company: IAS
 showInProjects: true
-showInDemos: true
+showInGallery: true
 ---
 
 A self-initiated internal tool I created to assist support staff, management, and developers at [IAS](https://www.integratedauctionsolutions.com/) to give an overhead view of all our Marketplace clients and their inventory, settings, and events, test apis, and more.

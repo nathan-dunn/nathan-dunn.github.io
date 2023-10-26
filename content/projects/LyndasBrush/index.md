@@ -14,7 +14,7 @@ tech:
   - Vite
 company: ''
 showInProjects: true
-showInDemos: true
+showInGallery: true
 ---
 
 I needed an excuse to try [Svelte](https://svelte.dev/) so I made a super simple photo gallery for my mom's figurines.

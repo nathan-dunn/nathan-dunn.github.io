@@ -189,7 +189,7 @@ const ArchivePage = ({ location, data }) => {
                     <tr key={i} ref={el => (revealProjects.current[i] = el)}>
                       <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
 
-                      <Link className="title" to={i === 0 ? '/demos' : `/demos/#${id}`}>
+                      <Link className="title" to={i === 0 ? '/gallery' : `/gallery/#${id}`}>
                         <td className="title">{title}</td>
                       </Link>
 

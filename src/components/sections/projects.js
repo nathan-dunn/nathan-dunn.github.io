@@ -16,7 +16,7 @@ const StyledProjectsSection = styled.section`
     font-size: clamp(24px, 5vw, var(--fz-heading));
   }
 
-  .demos-link {
+  .gallery-link {
     font-family: var(--font-mono);
     font-size: var(--fz-sm);
     &:after {
@@ -42,7 +42,7 @@ const StyledProjectsSection = styled.section`
     margin: 80px auto 0;
   }
 
-  .archive-demos {
+  .gallery-demos {
     display: flex;
     justify-content: space-apart;
     gap: 100px;
@@ -250,7 +250,7 @@ const Projects = () => {
           </div>
 
           <h3 className="project-title">
-            <a href={`/demos#${id}`} target="_self" rel="noreferrer">
+            <a href={`/gallery#${id}`} target="_self" rel="noreferrer">
               {title}
             </a>
           </h3>
@@ -275,12 +275,12 @@ const Projects = () => {
     <StyledProjectsSection>
       <h2 ref={revealTitle}>Personal Projects</h2>
 
-      <div className="archive-demos" ref={revealDemosArchiveLink}>
-        {/* <Link className="inline-link demos-link" to="/demos">
-          view the demos
-        </Link> */}
-        <Link className="inline-link demos-link" to="/archive">
-          view the archives
+      <div className="gallery-demos" ref={revealDemosArchiveLink}>
+        <Link className="inline-link gallery-link" to="/gallery">
+          gallery
+        </Link>
+        <Link className="inline-link gallery-link" to="/archive">
+          archives
         </Link>
       </div>
 

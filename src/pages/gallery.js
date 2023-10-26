@@ -30,8 +30,9 @@ const StyledTableContainer = styled.div`
     .content {
       display: flex;
       flex-direction: column;
-      gap: 80px;
+      gap: 50px;
       border: 1px solid var(--light-navy);
+      border-radius: 5px;
 
       @media (max-width: 768px) {
         gap: 40px;
@@ -72,11 +73,10 @@ const StyledTableContainer = styled.div`
     }
 
     .row-wrapper {
-      // padding-top: 100px; // <--- here
-    }
-
-    .row-wrapper:first-child {
-      // padding-top: 0; // <--- here
+      padding-top: 15px;
+      padding-left: 10px;
+      padding-right: 10px;
+      min-height: 350px;
     }
 
     .tr {
@@ -164,7 +164,6 @@ const StyledTableContainer = styled.div`
   }
 
   .title {
-    padding-top: 5px;
     padding-right: 50px;
     color: var(--lightest-slate);
     font-size: var(--fz-heading);
@@ -203,7 +202,7 @@ const StyledTableContainer = styled.div`
   }
 `;
 
-const DemosPage = ({ location, data }) => {
+const GalleryPage = ({ location, data }) => {
   const projects = data.allMarkdownRemark.edges;
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
@@ -221,11 +220,11 @@ const DemosPage = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      <Helmet title="Demos" />
+      <Helmet title="Gallery" />
 
       <main>
         <header ref={revealTitle}>
-          <h1 className="big-heading">Demos</h1>
+          <h1 className="big-heading">Gallery</h1>
           <p className="subtitle">To get the gist</p>
         </header>
 
@@ -282,19 +281,19 @@ const DemosPage = ({ location, data }) => {
     </Layout>
   );
 };
-DemosPage.propTypes = {
+GalleryPage.propTypes = {
   location: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
 };
 
-export default DemosPage;
+export default GalleryPage;
 
 export const pageQuery = graphql`
   {
     allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/content/(featured|projects)/" }
-        frontmatter: { showInDemos: { ne: false } }
+        frontmatter: { showInGallery: { ne: false } }
       }
       sort: { fields: [frontmatter___id], order: ASC }
     ) {

@@ -18,7 +18,7 @@ tech:
   - Keycloak
 company: IAS
 showInFeatured: true
-showInDemos: true
+showInGallery: true
 ---
 
 IAS Connect is our custom authentication and authorization service. It is a web-based, white-label multi-tenant application, with custom branding for each of our clients. It is used by our Marketplace product to authenticate and authorize users.

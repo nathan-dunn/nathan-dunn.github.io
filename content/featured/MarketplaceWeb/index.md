@@ -17,7 +17,7 @@ tech:
   - Docker
 company: IAS
 showInFeatured: true
-showInDemos: true
+showInGallery: true
 ---
 
 The web version of our flagship product, Marketplace. Dealers can to bid and buy vehicles in real-time as well as manage their inventory from their web browser. Marketplace Web is a white-label multi-tenant application, with custom branding for each of our clients.

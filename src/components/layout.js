@@ -13,6 +13,7 @@ const StyledContent = styled.div`
 const Layout = ({ children, location }) => {
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
+  const [mode, setMode] = useState('dark');
 
   // Sets target="_blank" rel="noopener noreferrer" on external links
   const handleExternalLinks = () => {
@@ -52,7 +53,7 @@ const Layout = ({ children, location }) => {
 
       <div id="root">
         <ThemeProvider theme={theme}>
-          <GlobalStyle />
+          <GlobalStyle mode={mode} />
 
           <a className="skip-to-content" href="#content">
             Skip to Content
@@ -62,9 +63,9 @@ const Layout = ({ children, location }) => {
             <Loader finishLoading={() => setIsLoading(false)} />
           ) : (
             <StyledContent>
-              <Nav isHome={isHome} />
+              <Nav isHome={isHome} mode={mode} setMode={setMode} />
               <Social isHome={isHome} />
-              <Email isHome={isHome} />
+              <Email isHome={isHome} mode={mode} setMode={setMode} />
 
               <div id="content">
                 {children}

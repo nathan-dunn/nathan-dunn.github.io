@@ -4,12 +4,14 @@ import {
   IconAppStore,
   IconBookmark,
   IconCodepen,
+  IconDark,
   IconDemo,
   IconExternal,
   IconFolder,
   IconFork,
   IconGitHub,
   IconInstagram,
+  IconLight,
   IconLinkedin,
   IconLoader,
   IconLogo,
@@ -53,6 +55,10 @@ const Icon = ({ name }) => {
       return <IconResume />;
     case 'Demo':
       return <IconDemo />;
+    case 'Light':
+      return <IconLight />;
+    case 'Dark':
+      return <IconDark />;
 
     default:
       return <IconExternal />;

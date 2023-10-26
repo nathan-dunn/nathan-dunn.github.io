@@ -13,7 +13,7 @@ tech:
   - MongoDB
 company: ''
 showInProjects: true
-showInDemos: true
+showInGallery: true
 ---
 
 I built this app years ago to help us decide on a new city. It fetches and scrapes data from [Best Places](https://www.bestplaces.net/) and [Area Vibes](https://www.areavibes.com/) and then displays it in a simplified format.

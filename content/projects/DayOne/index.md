@@ -16,7 +16,7 @@ tech:
   - Lottie
 company: ''
 showInProjects: true
-showInDemos: true
+showInGallery: true
 ---
 
 A mobile app I created for my wife and I when we were doing the same workout program. The app allows you to set your maxes and then calculates the weights for each workout.
