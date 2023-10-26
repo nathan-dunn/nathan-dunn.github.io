@@ -13,9 +13,18 @@ const StyledContent = styled.div`
 const Layout = ({ children, location }) => {
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
-  const [mode, setMode] = useState('dark');
 
-  // Sets target="_blank" rel="noopener noreferrer" on external links
+  const getInitialMode = () => {
+    const savedMode = localStorage.getItem('mode');
+    return savedMode || 'dark';
+  };
+
+  const [mode, setMode] = useState(getInitialMode);
+
+  useEffect(() => {
+    localStorage.setItem('mode', mode);
+  }, [mode]);
+
   const handleExternalLinks = () => {
     const allLinks = Array.from(document.querySelectorAll('a'));
     if (allLinks.length > 0) {
