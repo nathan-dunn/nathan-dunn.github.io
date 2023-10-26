@@ -14,12 +14,14 @@ const Layout = ({ children, location }) => {
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
 
-  const getInitialMode = () => {
-    const savedMode = localStorage.getItem('mode');
-    return savedMode || 'dark';
-  };
+  const [mode, setMode] = useState('dark');
 
-  const [mode, setMode] = useState(getInitialMode);
+  useEffect(() => {
+    const savedMode = localStorage.getItem('mode');
+    if (savedMode) {
+      setMode(savedMode);
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('mode', mode);
