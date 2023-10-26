@@ -6,12 +6,11 @@ const variables = ({ mode }) => css`
     --navy: ${mode === 'light' ? '#ccd6f6' : '#0a192f'};
     --light-navy: ${mode === 'light' ? '#a8b2d1' : '#112240'};
     --lightest-navy: ${mode === 'light' ? '#8892b0' : '#233554'};
-    --navy-shadow: ${mode === 'light' ? `rgba(136, 146, 176, 0.7)` : `rgba(2, 12, 27, 0.7)`};
+    --navy-shadow: ${mode === 'light' ? 'none' : `rgba(2, 12, 27, 0.7)`};
 
     --slate: ${mode === 'light' ? '#0a192f' : '#8892b0'};
     --light-slate: ${mode === 'light' ? '#112240' : '#a8b2d1'};
     --lightest-slate: ${mode === 'light' ? '#233554' : '#ccd6f6'};
-    --slate-shadow: ${mode === 'light' ? `rgba(2, 12, 27, 0.7)` : `rgba(136, 146, 176, 0.7)`};
 
     --white: ${mode === 'light' ? '#0a192f' : '#e6f1ff'};
     --green: ${mode === 'light' ? '#cb4154' : '#64ffda'};
