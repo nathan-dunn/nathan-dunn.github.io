@@ -14,7 +14,6 @@ tech:
   - React Native
   - Redux
   - iOS
-company: IAS
 showInFeatured: true
 showInGallery: true
 ---

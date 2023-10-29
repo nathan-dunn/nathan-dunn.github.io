@@ -16,7 +16,6 @@ tech:
   - Algolia
   - SignalR
   - Fastlane
-company: IAS
 showInFeatured: true
 showInGallery: true
 ---

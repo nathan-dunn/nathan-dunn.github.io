@@ -220,7 +220,7 @@ const StyledProject = styled.li`
       ${({ theme }) => theme.mixins.flexCenter};
       padding: 10px;
 
-      &.external {
+      &.icon {
         svg {
           width: 22px;
           height: 22px;
@@ -232,11 +232,6 @@ const StyledProject = styled.li`
         width: 20px;
         height: 20px;
       }
-    }
-
-    .cta {
-      ${({ theme }) => theme.mixins.smallButton};
-      margin: 10px;
     }
   }
 
@@ -323,6 +318,7 @@ const Featured = () => {
               tech
               github
               external
+              showInGallery
             }
             html
           }
@@ -355,7 +351,7 @@ const Featured = () => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { id, external, title, tech, github, cover, cta } = frontmatter;
+            const { id, external, title, tech, github, cover, showInGallery } = frontmatter;
             const image = getImage(cover);
 
             return (
@@ -368,8 +364,7 @@ const Featured = () => {
                       <a
                         href={i === 0 ? '/gallery' : `/gallery#${id}`}
                         target="_self"
-                        rel="noreferrer"
-                      >
+                        rel="noreferrer">
                         {title}
                       </a>
                     </h3>
@@ -388,13 +383,21 @@ const Featured = () => {
                     )}
 
                     <div className="project-links">
+                      {showInGallery && (
+                        <a
+                          href={i === 0 ? '/gallery' : `/gallery#${id}`}
+                          aria-label="Gallery Link"
+                          className="icon">
+                          <Icon name="Gallery" />
+                        </a>
+                      )}
                       {github && (
-                        <a href={github} aria-label="GitHub Link">
+                        <a href={github} aria-label="GitHub Link" className="icon">
                           <Icon name="GitHub" />
                         </a>
                       )}
-                      {external && !cta && (
-                        <a href={external} aria-label="External Link" className="external">
+                      {external && (
+                        <a href={external} aria-label="External Link" className="icon">
                           <Icon name="External" />
                         </a>
                       )}

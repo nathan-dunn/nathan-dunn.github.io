@@ -16,7 +16,6 @@ tech:
   - PostgreSQL
   - MSSQL
   - Keycloak
-company: IAS
 showInFeatured: true
 showInGallery: true
 ---

@@ -241,8 +241,7 @@ const Projects = () => {
                   aria-label="External Link"
                   className="external"
                   target="_blank"
-                  rel="noreferrer"
-                >
+                  rel="noreferrer">
                   <Icon name="External" />
                 </a>
               )}
@@ -276,9 +275,9 @@ const Projects = () => {
       <h2 ref={revealTitle}>Personal Projects</h2>
 
       <div className="gallery-demos" ref={revealDemosArchiveLink}>
-        <Link className="inline-link gallery-link" to="/gallery">
+        {/* <Link className="inline-link gallery-link" to="/gallery">
           gallery
-        </Link>
+        </Link> */}
         <Link className="inline-link gallery-link" to="/archive">
           archives
         </Link>
@@ -300,15 +299,13 @@ const Projects = () => {
                   key={i}
                   classNames="fadeup"
                   timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
-                  exit={false}
-                >
+                  exit={false}>
                   <StyledProject
                     key={i}
                     ref={el => (revealProjects.current[i] = el)}
                     style={{
                       transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
-                    }}
-                  >
+                    }}>
                     {projectInner(node)}
                   </StyledProject>
                 </CSSTransition>

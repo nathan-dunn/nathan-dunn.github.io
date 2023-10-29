@@ -15,7 +15,6 @@ tech:
   - Node.js
   - Elasticsearch
   - Docker
-company: IAS
 showInFeatured: true
 showInGallery: true
 ---
