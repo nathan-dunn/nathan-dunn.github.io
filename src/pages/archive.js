@@ -1,5 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Link, graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
@@ -8,6 +9,8 @@ import sr from '@utils/sr';
 import { Layout } from '@components';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
 
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
@@ -118,14 +121,29 @@ const StyledTableContainer = styled.div`
         div {
           display: flex;
           align-items: center;
+        }
 
-          a {
-            ${({ theme }) => theme.mixins.flexCenter};
-            flex-shrink: 0;
+        .icon {
+          ${({ theme }) => theme.mixins.flexCenter};
+          padding: 10px;
+          cursor: pointer;
+
+          &:hover,
+          &:focus {
+            color: var(--green);
           }
 
-          a + a {
-            margin-left: 10px;
+          &.external {
+            svg {
+              width: 22px;
+              height: 22px;
+              margin-top: -4px;
+            }
+          }
+
+          svg {
+            width: 20px;
+            height: 20px;
           }
         }
       }
@@ -139,6 +157,8 @@ const ArchivePage = ({ location, data }) => {
   const revealTable = useRef(null);
   const revealProjects = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const [open, setOpen] = useState(false);
+  const [slides, setSlides] = useState([]);
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -161,6 +181,27 @@ const ArchivePage = ({ location, data }) => {
         </header>
 
         <StyledTableContainer ref={revealTable}>
+          <Lightbox
+            open={open}
+            close={() => setOpen(false)}
+            slides={slides}
+            index={0}
+            render={{
+              slide: ({ slide }, index) => (
+                <div key={index} className="image-wrapper" onClick={() => setOpen(true)}>
+                  <GatsbyImage
+                    key={index}
+                    className="img"
+                    image={getImage(slide.childImageSharp.huge)}
+                    alt={`Slide ${index + 1}`}
+                    style={{ maxHeight: '90vh' }}
+                    objectFit="contain"
+                  />
+                </div>
+              ),
+            }}
+          />
+
           <table>
             <thead>
               <tr>
@@ -184,6 +225,8 @@ const ArchivePage = ({ location, data }) => {
                     title,
                     tech,
                     company,
+                    showInGallery,
+                    covers,
                   } = node.frontmatter;
                   return (
                     <tr key={i} ref={el => (revealProjects.current[i] = el)}>
@@ -210,23 +253,33 @@ const ArchivePage = ({ location, data }) => {
 
                       <td className="links">
                         <div>
-                          {external && (
-                            <a href={external} aria-label="External Link">
-                              <Icon name="External" />
-                            </a>
+                          {showInGallery && (
+                            <span
+                              className="icon"
+                              onClick={() => {
+                                setSlides(covers);
+                                setOpen(true);
+                              }}>
+                              <Icon name="Gallery" />
+                            </span>
                           )}
                           {github && (
-                            <a href={github} aria-label="GitHub Link">
+                            <a href={github} aria-label="GitHub Link" className="icon">
                               <Icon name="GitHub" />
                             </a>
                           )}
+                          {external && (
+                            <a href={external} aria-label="External Link" className="icon">
+                              <Icon name="External" />
+                            </a>
+                          )}
                           {ios && (
-                            <a href={ios} aria-label="Apple App Store Link">
+                            <a href={ios} aria-label="Apple App Store Link" className="icon">
                               <Icon name="AppStore" />
                             </a>
                           )}
                           {android && (
-                            <a href={android} aria-label="Google Play Store Link">
+                            <a href={android} aria-label="Google Play Store Link" className="icon">
                               <Icon name="PlayStore" />
                             </a>
                           )}
@@ -265,6 +318,17 @@ export const pageQuery = graphql`
             github
             external
             company
+            showInGallery
+            covers {
+              childImageSharp {
+                huge: gatsbyImageData(
+                  height: 1200
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                  layout: CONSTRAINED
+                )
+              }
+            }
           }
           html
         }
