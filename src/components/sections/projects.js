@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
-import Gallery from '@components/gallery';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
 
 const StyledProjectsSection = styled.section`
   display: flex;
@@ -118,6 +120,30 @@ const StyledProject = styled.li`
           height: 20px;
         }
       }
+
+      .icon {
+        ${({ theme }) => theme.mixins.flexCenter};
+        padding: 10px;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+          color: var(--green);
+        }
+
+        &.external {
+          svg {
+            width: 22px;
+            height: 22px;
+            margin-top: -4px;
+          }
+        }
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
     }
   }
 
@@ -190,6 +216,29 @@ const Projects = () => {
               tech
               github
               external
+              showInGallery
+              covers {
+                childImageSharp {
+                  small: gatsbyImageData(
+                    height: 350
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                    layout: CONSTRAINED
+                  )
+                  large: gatsbyImageData(
+                    height: 600
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                    layout: CONSTRAINED
+                  )
+                  huge: gatsbyImageData(
+                    height: 1200
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                    layout: CONSTRAINED
+                  )
+                }
+              }
             }
             html
           }
@@ -218,10 +267,12 @@ const Projects = () => {
   const projects = data.projects.edges.filter(({ node }) => node);
   const firstSix = projects.slice(0, GRID_LIMIT);
   const projectsToShow = showMore ? projects : firstSix;
+  const [open, setOpen] = useState(false);
+  const [slides, setSlides] = useState([]);
 
   const projectInner = node => {
     const { frontmatter, html } = node;
-    const { id, github, external, title, tech } = frontmatter;
+    const { id, github, external, title, tech, showInGallery, covers } = frontmatter;
 
     return (
       <div className="project-inner">
@@ -231,8 +282,23 @@ const Projects = () => {
               <Icon name="Folder" />
             </div>
             <div className="project-links">
+              {showInGallery && (
+                <span
+                  className="icon"
+                  onClick={() => {
+                    setSlides(covers);
+                    setOpen(true);
+                  }}>
+                  <Icon name="Gallery" />
+                </span>
+              )}
               {github && (
-                <a href={github} aria-label="GitHub Link" target="_blank" rel="noreferrer">
+                <a
+                  className="icon"
+                  href={github}
+                  aria-label="GitHub Link"
+                  target="_blank"
+                  rel="noreferrer">
                   <Icon name="GitHub" />
                 </a>
               )}
@@ -240,7 +306,7 @@ const Projects = () => {
                 <a
                   href={external}
                   aria-label="External Link"
-                  className="external"
+                  className="icon"
                   target="_blank"
                   rel="noreferrer">
                   <Icon name="External" />
@@ -249,11 +315,7 @@ const Projects = () => {
             </div>
           </div>
 
-          <h3 className="project-title">
-            <a href={`/gallery#${id}`} target="_self" rel="noreferrer">
-              {title}
-            </a>
-          </h3>
+          <h3 className="project-title">{title}</h3>
 
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
         </header>
@@ -273,12 +335,30 @@ const Projects = () => {
 
   return (
     <StyledProjectsSection>
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        slides={slides}
+        index={0}
+        render={{
+          slide: ({ slide }, index) => (
+            <div key={index} className="image-wrapper" onClick={() => setOpen(true)}>
+              <GatsbyImage
+                key={index}
+                className="img"
+                image={getImage(slide.childImageSharp.huge)}
+                alt={`Slide ${index + 1}`}
+                style={{ maxHeight: '90vh' }}
+                objectFit="contain"
+              />
+            </div>
+          ),
+        }}
+      />
+
       <h2 ref={revealTitle}>Personal Projects</h2>
 
       <div className="gallery-demos" ref={revealDemosArchiveLink}>
-        {/* <Link className="inline-link gallery-link" to="/gallery">
-          gallery
-        </Link> */}
         <Link className="inline-link gallery-link" to="/archive">
           archives
         </Link>
