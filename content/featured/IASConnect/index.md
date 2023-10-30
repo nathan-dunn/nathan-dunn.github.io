@@ -1,22 +1,23 @@
 ---
 id: 4
-date: '1-1-2023'
-title: 'IAS Connect'
-cover: './image_1.png'
+date: 1-1-2023
+title: IAS Connect
+company: IAS
+jobTitle: Lead Developer
+cover: ./image_1.png
 covers:
-  - './image_2.png'
-  - './image_3.png'
-  - './image_4.png'
-  - './image_5.png'
-external: ''
-github: 'https://github.com/IAS-DEV/ias-connect/'
+  - ./image_2.png
+  - ./image_3.png
+  - ./image_4.png
+  - ./image_5.png
+external:
+github: https://github.com/IAS-DEV/ias-connect/
 tech:
   - Next.js
   - Node.js
   - PostgreSQL
   - MSSQL
   - Keycloak
-company: IAS
 showInFeatured: true
 showInGallery: true
 ---

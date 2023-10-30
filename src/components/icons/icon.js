@@ -9,6 +9,7 @@ import {
   IconExternal,
   IconFolder,
   IconFork,
+  IconGallery,
   IconGitHub,
   IconInstagram,
   IconLight,
@@ -59,6 +60,8 @@ const Icon = ({ name }) => {
       return <IconLight />;
     case 'Dark':
       return <IconDark />;
+    case 'Gallery':
+      return <IconGallery />;
 
     default:
       return <IconExternal />;

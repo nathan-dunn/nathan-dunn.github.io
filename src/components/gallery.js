@@ -6,7 +6,6 @@ import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/styles.css';
 
 // TODO: - get zoom to work
-
 const StyledGallery = styled.div`
   .gallery-container {
     @media (max-width: 768px) {
@@ -89,8 +88,7 @@ const Gallery = ({ covers }) => {
               onClick={() => {
                 setLightBoxIndex(index);
                 setOpen(true);
-              }}
-            >
+              }}>
               <GatsbyImage
                 key={index}
                 className="img"

@@ -1,22 +1,23 @@
 ---
 id: 1
-date: '1-1-2023'
-title: 'Marketplace Mobile'
-cover: './image_1.png'
+date: 1-1-2023
+title: Marketplace Mobile
+company: IAS
+jobTitle: Lead Developer
+cover: ./image_1.png
 covers:
-  - './image_2.png'
-  - './image_3.png'
-  - './image_4.png'
-  - './image_5.png'
-github: 'https://github.com/IAS-DEV/marketplace-mobile/'
-external: 'https://www.integratedauctionsolutions.com/marketplace/'
+  - ./image_2.png
+  - ./image_3.png
+  - ./image_4.png
+  - ./image_5.png
+github: https://github.com/IAS-DEV/marketplace-mobile/
+external: https://www.integratedauctionsolutions.com/marketplace/
 tech:
   - React Native
   - Redux
   - Algolia
   - SignalR
   - Fastlane
-company: IAS
 showInFeatured: true
 showInGallery: true
 ---
