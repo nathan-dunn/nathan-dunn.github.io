@@ -455,7 +455,15 @@ const GlobalStyle = createGlobalStyle`
     padding: 50px;
   }
 
-
+  .tech {
+    padding: 0.15rem 0.65rem;
+    align-items: center;
+    line-height: 1.25rem;
+    font-weight: 500;
+    background-color: rgba(45,212,191,.1);
+    border-radius: 10015px;
+    color: rgb(94 234 212);
+  }
 `;
 
 export default GlobalStyle;

@@ -18,4 +18,4 @@ showInProjects: true
 showInGallery: false
 ---
 
-100% credit goes to [Brittany Chiang](https://github.com/bchiang7) for designing this site. I just took her project and made it my own with some tweaks. This was my first experience with Gatsby and GraphQL besides Udemy tutorials.
+100% credit goes to [Brittany Chiang](https://github.com/bchiang7) for designing this site. I just took her project and made it my own with several tweaks. This was my first experience with Gatsby and GraphQL besides Udemy tutorials.

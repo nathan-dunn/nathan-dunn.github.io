@@ -59,6 +59,8 @@ const StyledProject = styled.li`
       }
     }
     .project-tech-list {
+      margin: 25px 0 10px 75px;
+      // border: 1px solid red;
       justify-content: flex-end;
 
       @media (max-width: 768px) {
@@ -66,7 +68,8 @@ const StyledProject = styled.li`
       }
 
       li {
-        margin: 0 0 5px 20px;
+        margin-bottom: 0.5rem;
+        margin-right: 0.5rem;
 
         @media (max-width: 768px) {
           margin: 0 10px 5px 0;
@@ -188,12 +191,14 @@ const StyledProject = styled.li`
     flex-wrap: wrap;
     position: relative;
     z-index: 2;
-    margin: 25px 0 10px;
+    margin: 25px 75px 10px 0;
     padding: 0;
     list-style: none;
+    // border: 1px solid pink;
 
     li {
-      margin: 0 20px 5px 0;
+      margin-bottom: 0.5rem;
+      margin-right: 0.375rem;
       color: var(--light-slate);
       font-family: var(--font-mono);
       font-size: var(--fz-xs);
@@ -394,7 +399,9 @@ const Featured = () => {
                     {tech.length && (
                       <ul className="project-tech-list">
                         {tech.map((tech, i) => (
-                          <li key={i}>{tech}</li>
+                          <li key={i}>
+                            <div className="tech">{tech}</div>
+                          </li>
                         ))}
                       </ul>
                     )}

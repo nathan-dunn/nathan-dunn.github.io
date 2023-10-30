@@ -103,7 +103,7 @@ const StyledTableContainer = styled.div`
         white-space: nowrap;
       }
 
-      &.tech {
+      &.tech-list {
         font-size: var(--fz-xxs);
         font-family: var(--font-mono);
         line-height: 1.5;
@@ -112,6 +112,8 @@ const StyledTableContainer = styled.div`
         }
         span {
           display: inline-block;
+          margin-bottom: 0.5rem;
+          margin-right: 0.375rem;
         }
       }
 
@@ -240,13 +242,11 @@ const ArchivePage = ({ location, data }) => {
                         {company ? <span>{company}</span> : <span>—</span>}
                       </td>
 
-                      <td className="tech hide-on-mobile">
+                      <td className="tech-list hide-on-mobile">
                         {tech?.length > 0 &&
                           tech.map((item, i) => (
-                            <span key={i}>
+                            <span key={i} className="tech">
                               {item}
-                              {''}
-                              {i !== tech.length - 1 && <span className="separator">&middot;</span>}
                             </span>
                           ))}
                       </td>

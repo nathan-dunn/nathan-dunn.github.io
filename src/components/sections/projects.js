@@ -189,10 +189,12 @@ const StyledProject = styled.li`
     li {
       font-family: var(--font-mono);
       font-size: var(--fz-xxs);
-      line-height: 1.75;
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+      margin-right: 0.375rem;
 
       &:not(:last-of-type) {
-        margin-right: 15px;
+        // margin-right: 15px;
       }
     }
   }
@@ -312,7 +314,9 @@ const Projects = () => {
           {tech && (
             <ul className="project-tech-list">
               {tech.map((tech, i) => (
-                <li key={i}>{tech}</li>
+                <li key={i}>
+                  <div className="tech">{tech}</div>
+                </li>
               ))}
             </ul>
           )}
@@ -344,7 +348,7 @@ const Projects = () => {
         }}
       />
 
-      <h2 ref={revealTitle}>Personal Projects</h2>
+      <h2 ref={revealTitle}>Other Projects</h2>
 
       <div className="gallery-demos" ref={revealDemosArchiveLink}>
         <Link className="inline-link gallery-link" to="/archive">
