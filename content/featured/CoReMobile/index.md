@@ -1,15 +1,17 @@
 ---
 id: 3
-date: '1-1-2020'
-title: 'CoRe Mobile'
-cover: './image_0.png'
+date: 1-1-2020
+title: CoRe Mobile
+company: IAS
+jobTitle: Lead Developer
+cover: ./image_0.png
 covers:
-  - './image_2.png'
-  - './image_3.png'
-  - './image_4.png'
-  - './image_5.png'
-external: 'https://www.integratedauctionsolutions.com/core/'
-github: 'https://github.com/IAS-DEV/core-native/'
+  - ./image_2.png
+  - ./image_3.png
+  - ./image_4.png
+  - ./image_5.png
+external: https://www.integratedauctionsolutions.com/core/
+github: https://github.com/IAS-DEV/core-native/
 tech:
   - React Native
   - Redux

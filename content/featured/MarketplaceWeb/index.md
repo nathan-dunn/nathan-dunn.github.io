@@ -1,14 +1,16 @@
 ---
 id: 2
-date: '1-1-2023'
-title: 'Marketplace Web'
-cover: './image_3.png'
+date: 1-1-2023
+title: Marketplace Web
+company: IAS
+jobTitle: Lead Developer
+cover: ./image_3.png
 covers:
-  - './image_1.png'
-  - './image_2.png'
-  - './image_3.png'
-github: 'https://github.com/IAS-DEV/marketplace-web/'
-external: 'https://www.integratedauctionsolutions.com/marketplace/'
+  - ./image_1.png
+  - ./image_2.png
+  - ./image_3.png
+github: https://github.com/IAS-DEV/marketplace-web/
+external: https://www.integratedauctionsolutions.com/marketplace/
 tech:
   - React
   - Redux

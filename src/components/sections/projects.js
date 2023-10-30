@@ -6,6 +6,7 @@ import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
+import Gallery from '@components/gallery';
 
 const StyledProjectsSection = styled.section`
   display: flex;

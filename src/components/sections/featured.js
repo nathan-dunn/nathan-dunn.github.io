@@ -1,10 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { Icon } from '@components/icons';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledProjectsGrid = styled.ul`
@@ -216,11 +218,17 @@ const StyledProject = styled.li`
     margin-left: -10px;
     color: var(--lightest-slate);
 
-    a {
+    .icon {
       ${({ theme }) => theme.mixins.flexCenter};
       padding: 10px;
+      cursor: pointer;
 
-      &.icon {
+      &:hover,
+      &:focus {
+        color: var(--green);
+      }
+
+      &.external {
         svg {
           width: 22px;
           height: 22px;
@@ -242,45 +250,23 @@ const StyledProject = styled.li`
     position: relative;
     z-index: 1;
 
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      background: transparent;
+      outline: 0;
+
+      &:before,
+      .img {
+        background: transparent;
+        filter: none;
+      }
+    }
+
     @media (max-width: 768px) {
       grid-column: 1 / -1;
       height: 100%;
       opacity: 0.25;
-    }
-
-    a {
-      width: 100%;
-      height: 100%;
-      // background-color: var(--lightest-slate);
-      border-radius: var(--border-radius);
-      vertical-align: middle;
-
-      &:hover,
-      &:focus {
-        background: transparent;
-        outline: 0;
-
-        &:before,
-        .img {
-          background: transparent;
-          filter: none;
-        }
-      }
-
-      &:before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 3;
-        transition: var(--transition);
-        // background-color: var(--navy);
-        mix-blend-mode: screen;
-      }
     }
 
     .img {
@@ -310,9 +296,32 @@ const Featured = () => {
             frontmatter {
               id
               title
+              jobTitle
               cover {
                 childImageSharp {
                   gatsbyImageData(width: 700, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+                }
+              }
+              covers {
+                childImageSharp {
+                  small: gatsbyImageData(
+                    height: 350
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                    layout: CONSTRAINED
+                  )
+                  large: gatsbyImageData(
+                    height: 600
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                    layout: CONSTRAINED
+                  )
+                  huge: gatsbyImageData(
+                    height: 1200
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                    layout: CONSTRAINED
+                  )
                 }
               }
               tech
@@ -332,6 +341,9 @@ const Featured = () => {
   const revealProjects = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
 
+  const [open, setOpen] = useState(false);
+  const [slides, setSlides] = useState([]);
+
   useEffect(() => {
     if (prefersReducedMotion) {
       return;
@@ -343,31 +355,48 @@ const Featured = () => {
 
   return (
     <section id="work">
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        slides={slides}
+        index={0}
+        render={{
+          slide: ({ slide }, index) => (
+            <div key={index} className="image-wrapper" onClick={() => setOpen(true)}>
+              <GatsbyImage
+                key={index}
+                className="img"
+                image={getImage(slide.childImageSharp.huge)}
+                alt={`Slide ${index + 1}`}
+                style={{ maxHeight: '90vh' }}
+                objectFit="contain"
+              />
+            </div>
+          ),
+        }}
+      />
+
       <h2 className="numbered-heading" ref={revealTitle}>
         Current Work
       </h2>
 
       <StyledProjectsGrid>
         {featuredProjects &&
-          featuredProjects.map(({ node }, i) => {
+          featuredProjects.map(({ node }, projectIndex) => {
             const { frontmatter, html } = node;
-            const { id, external, title, tech, github, cover, showInGallery } = frontmatter;
+            const { id, external, title, jobTitle, tech, github, cover, covers, showInGallery } =
+              frontmatter;
             const image = getImage(cover);
 
             return (
-              <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
+              <StyledProject
+                key={projectIndex}
+                ref={el => (revealProjects.current[projectIndex] = el)}>
                 <div className="project-content">
                   <div>
-                    <p className="project-overline">Project Lead</p>
+                    <p className="project-overline">{jobTitle}</p>
 
-                    <h3 className="project-title">
-                      <a
-                        href={i === 0 ? '/gallery' : `/gallery#${id}`}
-                        target="_self"
-                        rel="noreferrer">
-                        {title}
-                      </a>
-                    </h3>
+                    <h3 className="project-title">{title}</h3>
 
                     <div
                       className="project-description"
@@ -384,12 +413,15 @@ const Featured = () => {
 
                     <div className="project-links">
                       {showInGallery && (
-                        <a
-                          href={i === 0 ? '/gallery' : `/gallery#${id}`}
+                        <span
                           aria-label="Gallery Link"
-                          className="icon">
+                          className="icon"
+                          onClick={() => {
+                            setSlides(covers);
+                            setOpen(true);
+                          }}>
                           <Icon name="Gallery" />
-                        </a>
+                        </span>
                       )}
                       {github && (
                         <a href={github} aria-label="GitHub Link" className="icon">
@@ -405,10 +437,13 @@ const Featured = () => {
                   </div>
                 </div>
 
-                <div className="project-image">
-                  <a href={i === 0 ? '/gallery' : `/gallery#${id}`} target="_self" rel="noreferrer">
-                    <GatsbyImage image={image} alt={title} className="img" />
-                  </a>
+                <div
+                  className="project-image"
+                  onClick={() => {
+                    setSlides(covers);
+                    setOpen(true);
+                  }}>
+                  <GatsbyImage image={image} alt={title} className="img" />
                 </div>
               </StyledProject>
             );
