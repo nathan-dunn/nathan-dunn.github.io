@@ -56,11 +56,26 @@ const Email = ({ isHome, mode, setMode }) => (
       <a
         className="mode"
         href={null}
-        onClick={() => setMode(p => (p === 'dark' ? 'light' : 'dark'))}
-      >
+        onClick={() => {
+          const _initialMode = mode;
+          setMode(p => (p === 'dark' ? 'light' : 'dark'));
+          window.gtag('event', 'button_click', {
+            event_category: 'misc',
+            event_label: `mode -> ${_initialMode.toLowerCase()}`,
+          });
+        }}>
         <Icon name={mode === 'light' ? 'Dark' : 'Light'} />
       </a>
-      <a href={`mailto:${email}`}>{email}</a>
+      <a
+        href={`mailto:${email}`}
+        onClick={() => {
+          window.gtag('event', 'button_click', {
+            event_category: 'contact',
+            event_label: 'email - sidebar',
+          });
+        }}>
+        {email}
+      </a>
     </StyledLinkWrapper>
   </Side>
 );

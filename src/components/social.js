@@ -48,7 +48,14 @@ const Social = ({ isHome }) => (
     <StyledSocialList>
       {socialMedia &&
         socialMedia.map(({ url, name }, i) => (
-          <li key={i}>
+          <li
+            key={i}
+            onClick={() => {
+              window.gtag('event', 'button_click', {
+                event_category: 'contact',
+                event_label: name.toLowerCase(),
+              });
+            }}>
             <a href={url} aria-label={name} target="_blank" rel="noreferrer">
               <Icon name={name} />
             </a>

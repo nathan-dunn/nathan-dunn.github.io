@@ -22,10 +22,10 @@ module.exports = {
     //   name: 'Codepen',
     //   url: '',
     // },
-    {
-      name: 'Resume',
-      url: 'https://nathan-dunn-resume.surge.sh',
-    },
+    // {
+    //   name: 'Resume',
+    //   url: 'https://drive.google.com/file/d/11cQryoLjXg8iPJBjnc_TGFmtXKtlDli6/view?usp=drive_link',
+    // },
   ],
 
   navLinks: [

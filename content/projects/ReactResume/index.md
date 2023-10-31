@@ -19,4 +19,4 @@ showInGallery: true
 
 Online version of my resume I made to stand-out. It's handy and responsive, but when converting it to pdf the document is not scannable by ATS software!
 
-I have since made a [pdf version](https://nathan-dunn-resume.surge.sh/) that is scannable, but left this site up to show my work.
+I have since made a [pdf version](https://drive.google.com/file/d/11cQryoLjXg8iPJBjnc_TGFmtXKtlDli6/view?usp=drive_link) that is scannable, but left this site up to show my work.

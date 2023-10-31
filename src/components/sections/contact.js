@@ -64,7 +64,15 @@ const Contact = () => {
         best to get back to you!
       </p>
 
-      <a className="email-link" href={`mailto:${email}`}>
+      <a
+        className="email-link"
+        href={`mailto:${email}`}
+        onClick={() => {
+          window.gtag('event', 'button_click', {
+            event_category: 'contact',
+            event_label: 'email - say hi',
+          });
+        }}>
         Say Hello
       </a>
     </StyledContactSection>

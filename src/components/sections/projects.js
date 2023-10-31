@@ -278,6 +278,10 @@ const Projects = () => {
                   onClick={() => {
                     setSlides(covers);
                     setOpen(true);
+                    window.gtag('event', 'button_click', {
+                      event_category: 'projects',
+                      event_label: `link - ${title.toLowerCase()} - gallery`,
+                    });
                   }}>
                   <Icon name="Gallery" />
                 </span>
@@ -288,7 +292,13 @@ const Projects = () => {
                   href={github}
                   aria-label="GitHub Link"
                   target="_blank"
-                  rel="noreferrer">
+                  rel="noreferrer"
+                  onClick={() => {
+                    window.gtag('event', 'button_click', {
+                      event_category: 'projects',
+                      event_label: `link - ${title.toLowerCase()} - github`,
+                    });
+                  }}>
                   <Icon name="GitHub" />
                 </a>
               )}
@@ -298,7 +308,13 @@ const Projects = () => {
                   aria-label="External Link"
                   className="icon"
                   target="_blank"
-                  rel="noreferrer">
+                  rel="noreferrer"
+                  onClick={() => {
+                    window.gtag('event', 'button_click', {
+                      event_category: 'projects',
+                      event_label: `link - ${title.toLowerCase()} - external`,
+                    });
+                  }}>
                   <Icon name="External" />
                 </a>
               )}
@@ -350,7 +366,15 @@ const Projects = () => {
 
       <h2 ref={revealTitle}>Other Projects</h2>
 
-      <div className="gallery-demos" ref={revealDemosArchiveLink}>
+      <div
+        className="gallery-demos"
+        ref={revealDemosArchiveLink}
+        onClick={() => {
+          window.gtag('event', 'button_click', {
+            event_category: 'misc',
+            event_label: 'archives',
+          });
+        }}>
         <Link className="inline-link gallery-link" to="/archive">
           archives
         </Link>
@@ -387,7 +411,15 @@ const Projects = () => {
         )}
       </ul>
 
-      <button className="more-button" onClick={() => setShowMore(!showMore)}>
+      <button
+        className="more-button"
+        onClick={() => {
+          setShowMore(!showMore);
+          window.gtag('event', 'button_click', {
+            event_category: 'misc',
+            event_label: 'show more',
+          });
+        }}>
         Show {showMore ? 'Less' : 'More'}
       </button>
     </StyledProjectsSection>

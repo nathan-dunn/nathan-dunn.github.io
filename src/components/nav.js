@@ -210,8 +210,7 @@ const Nav = ({ isHome, mode, setMode }) => {
       className="resume-button"
       href="https://drive.google.com/file/d/11cQryoLjXg8iPJBjnc_TGFmtXKtlDli6/view?usp=drive_link"
       target="_blank"
-      rel="noopener noreferrer"
-    >
+      rel="noopener noreferrer">
       Resume
     </a>
   );
@@ -254,7 +253,15 @@ const Nav = ({ isHome, mode, setMode }) => {
                     navLinks &&
                     navLinks.map(({ url, name }, i) => (
                       <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
-                        <li key={i} style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
+                        <li
+                          key={i}
+                          style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}
+                          onClick={() => {
+                            window.gtag('event', 'button_click', {
+                              event_category: 'nav',
+                              event_label: name.toLowerCase(),
+                            });
+                          }}>
                           <Link to={url}>{name}</Link>
                         </li>
                       </CSSTransition>
@@ -265,7 +272,14 @@ const Nav = ({ isHome, mode, setMode }) => {
               <TransitionGroup component={null}>
                 {isMounted && (
                   <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-                    <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
+                    <div
+                      style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}
+                      onClick={() => {
+                        window.gtag('event', 'button_click', {
+                          event_category: 'contact',
+                          event_label: 'resume',
+                        });
+                      }}>
                       {ResumeLink}
                     </div>
                   </CSSTransition>

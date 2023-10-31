@@ -414,17 +414,39 @@ const Featured = () => {
                           onClick={() => {
                             setSlides(covers);
                             setOpen(true);
+                            window.gtag('event', 'button_click', {
+                              event_category: 'featured',
+                              event_label: `link - ${title.toLowerCase()} - gallery`,
+                            });
                           }}>
                           <Icon name="Gallery" />
                         </span>
                       )}
                       {github && (
-                        <a href={github} aria-label="GitHub Link" className="icon">
+                        <a
+                          href={github}
+                          aria-label="GitHub Link"
+                          className="icon"
+                          onClick={() => {
+                            window.gtag('event', 'button_click', {
+                              event_category: 'featured',
+                              event_label: `link - ${title.toLowerCase()} - github`,
+                            });
+                          }}>
                           <Icon name="GitHub" />
                         </a>
                       )}
                       {external && (
-                        <a href={external} aria-label="External Link" className="icon">
+                        <a
+                          href={external}
+                          aria-label="External Link"
+                          className="icon"
+                          onClick={() => {
+                            window.gtag('event', 'button_click', {
+                              event_category: 'featured',
+                              event_label: `link - ${title.toLowerCase()} - external`,
+                            });
+                          }}>
                           <Icon name="External" />
                         </a>
                       )}
@@ -437,6 +459,10 @@ const Featured = () => {
                   onClick={() => {
                     setSlides(covers);
                     setOpen(true);
+                    window.gtag('event', 'button_click', {
+                      event_category: 'featured',
+                      event_label: `image - ${title}`,
+                    });
                   }}>
                   <GatsbyImage image={image} alt={title} className="img" />
                 </div>

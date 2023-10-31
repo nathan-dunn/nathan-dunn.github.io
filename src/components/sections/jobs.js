@@ -261,8 +261,7 @@ const Jobs = () => {
                   role="tab"
                   tabIndex={activeTabId === i ? '0' : '-1'}
                   aria-selected={activeTabId === i ? true : false}
-                  aria-controls={`panel-${i}`}
-                >
+                  aria-controls={`panel-${i}`}>
                   <span>{company}</span>
                 </StyledTabButton>
               );
@@ -284,9 +283,14 @@ const Jobs = () => {
                     tabIndex={activeTabId === i ? '0' : '-1'}
                     aria-labelledby={`tab-${i}`}
                     aria-hidden={activeTabId !== i}
-                    hidden={activeTabId !== i}
-                  >
-                    <h3>
+                    hidden={activeTabId !== i}>
+                    <h3
+                      onClick={() => {
+                        window.gtag('event', 'button_click', {
+                          event_category: 'jobs',
+                          event_label: company.toLowerCase(),
+                        });
+                      }}>
                       <span>{title}</span>
                       <span className="company">
                         &nbsp;@&nbsp;
